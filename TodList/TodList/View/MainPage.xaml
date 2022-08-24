@@ -6,7 +6,7 @@
 
     <StackLayout BackgroundColor="White">
         <StackLayout>
-            <Label Text="Tasks" TextColor="#F30DCD" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" FontSize="Medium" />
+            <Label Text="To-do" TextColor="#F30DCD" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" FontSize="Medium" />
         </StackLayout>
         <ListView x:Name="todoListViews"> 
             <ListView.ItemTemplate>
