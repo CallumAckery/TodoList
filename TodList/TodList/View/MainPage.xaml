@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodList.MainPage" 
+             >
+
+    <StackLayout BackgroundColor="White">
+        <StackLayout>
+            <Label Text="Tasks" TextColor="#F30DCD" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" FontSize="Medium" />
+        </StackLayout>
+        <ListView x:Name="todoListViews"> 
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem CommandParameter="{Binding .}" Text="Delete" BackgroundColor="#F30DCD" Invoked="SwipeItem_Invoked"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            
+                            <!--
+                            <SwipeView.LeftItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem CommandParameter="{Binding isDone}" Text="Done" BackgroundColor="Green" Invoked="SwipeItemLeft_Invoked" />
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            -->
+                            
+                            <ContentView>
+                                <!-- where the grid goes -->
+                                <Grid BackgroundColor="White">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout>
+                                        <Label Text="{Binding Id}" IsVisible="false"/>
+                                    </StackLayout>
+
+                                    <StackLayout>
+                                            <Label Text="{Binding Notes}" FontSize="Large" TextColor="#F30DCD" Margin="10"  />
+                                      
+                                    </StackLayout>
+                                </Grid>
+                            </ContentView>
+                        </SwipeView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Frame x:Name="frameAddNote" CornerRadius="50" Margin="20" BorderColor="#F30DCD" Padding="20,0,20,0">
+                    <Entry x:Name="addNote" Text="{Binding Notes}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End"
+                        TextColor="Black"
+                        Placeholder="i want to..."
+                        PlaceholderColor="#00000"
+                        MaxLength="50"
+                        Margin="5"/>
+                </Frame>
+            </StackLayout>
+
+        
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
