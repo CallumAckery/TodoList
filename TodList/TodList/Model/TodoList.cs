@@ -18,24 +18,6 @@ namespace TodList.Model
         [Column("notes")]
         public string Notes { get; set; }
 
-        //[Column("isDone")]
-        //public bool isDone { get; set; }
-
-        //public string textDec
-        //{
-        //    get
-        //    {
-        //        if (isDone)
-        //        {
-        //            return "Strikethrough";
-        //        }
-        //        else
-        //        {
-        //            return "None";
-        //        }
-        //    }
-        //}
-
 
         /* COnstructor pass ID and List */
         public TodoList(int id, string list)
